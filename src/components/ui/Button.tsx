@@ -17,17 +17,21 @@ export function Button({
   href,
   variant = "primary",
   withIcon = true,
+  external = false,
   className,
 }: {
   children: ReactNode;
   href: string;
   variant?: ButtonVariant;
   withIcon?: boolean;
+  external?: boolean;
   className?: string;
 }) {
   return (
     <a
       href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
       className={cn(
         "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5",
         variantClasses[variant],

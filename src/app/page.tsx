@@ -4,6 +4,7 @@ import { Hero } from "@/components/sections/Hero";
 import { Challenges } from "@/components/sections/Challenges";
 import { Benefits } from "@/components/sections/Benefits";
 import { Dashboards } from "@/components/sections/Dashboards";
+import { ProjectsShowcase } from "@/components/sections/ProjectsShowcase";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { BeforeAfter } from "@/components/sections/BeforeAfter";
 import { Integrations } from "@/components/sections/Integrations";
@@ -20,6 +21,7 @@ export default function Home() {
         <Challenges />
         <Benefits />
         <Dashboards />
+        <ProjectsShowcase />
         <HowItWorks />
         <BeforeAfter />
         <Integrations />

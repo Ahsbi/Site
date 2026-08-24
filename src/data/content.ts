@@ -14,6 +14,7 @@ import {
   Search,
   Settings2,
   Sparkles,
+  TrendingUp,
   UserCircle2,
   Wallet,
   Zap,
@@ -22,16 +23,19 @@ import {
 export const siteConfig = {
   name: "BI Contábil",
   tagline: "Consultoria em Business Intelligence para Escritórios Contábeis",
-  email: "contato@example.com",
-  phone: "+55 (11) 0000-0000",
+  email: "ahsconsultoriabi@gmail.com",
+  phone: "(85) 99792-9650",
+  phoneHref: "+5585997929650",
+  whatsapp: "https://wa.me/5585997929650",
 };
 
 export const nav: { label: string; href: string }[] = [
-  { label: "Desafios", href: "#desafios" },
-  { label: "Benefícios", href: "#beneficios" },
-  { label: "Dashboards", href: "#dashboards" },
-  { label: "Como funciona", href: "#como-funciona" },
-  { label: "Contato", href: "#contato" },
+  { label: "Desafios", href: "/#desafios" },
+  { label: "Benefícios", href: "/#beneficios" },
+  { label: "Dashboards", href: "/#dashboards" },
+  { label: "Como funciona", href: "/#como-funciona" },
+  { label: "Apresentação", href: "/apresentacao" },
+  { label: "Contato", href: "/#contato" },
 ];
 
 export const hero = {
@@ -259,6 +263,46 @@ export const testimonials = {
   title: "Depoimentos e cases",
   message:
     "Estamos construindo os primeiros cases de sucesso da consultoria. Em breve, esta área vai reunir depoimentos, resultados e comparativos de antes e depois de escritórios contábeis reais que transformaram sua gestão com dados.",
+};
+
+export interface ProjectItem {
+  title: string;
+  description: string;
+  embedUrl: string;
+  icon: LucideIcon;
+}
+
+export const projects: { eyebrow: string; title: string; subtitle: string; items: ProjectItem[] } = {
+  eyebrow: "Projetos desenvolvidos",
+  title: "Projetos que transformam dados em decisões",
+  subtitle:
+    "Mais do que falar sobre dados, eu desenvolvo soluções que ajudam empresas a visualizar, analisar e tomar melhores decisões.",
+  items: [
+    {
+      title: "Controle ao Crescimento",
+      description:
+        "Dashboard desenvolvido para apoiar empresas na organização financeira e no acompanhamento de indicadores essenciais para a gestão e o crescimento do negócio.",
+      embedUrl:
+        "https://app.powerbi.com/view?r=eyJrIjoiMmRlNzEyNjktNDY2MC00NWQxLTk4Y2YtNWJhM2M5ZDU1YjM3IiwidCI6IjcwNmUwZTIyLTUwZjktNDI2Ni1iOGMxLWViNDIyNmNkZDllYSJ9",
+      icon: TrendingUp,
+    },
+    {
+      title: "Controladoria XP Bucks",
+      description:
+        "Dashboard desenvolvido para acompanhamento de indicadores estratégicos de controladoria, proporcionando uma visão consolidada para análise e tomada de decisão.",
+      embedUrl:
+        "https://app.powerbi.com/view?r=eyJrIjoiYzZjNGY3NGEtOTBiZi00MDZkLWExZTQtMjAwODE0N2ZhZTI2IiwidCI6IjcwNmUwZTIyLTUwZjktNDI2Ni1iOGMxLWViNDIyNmNkZDllYSJ9",
+      icon: Wallet,
+    },
+    {
+      title: "Análise de Indicadores",
+      description:
+        "Dashboard desenvolvido para transformar dados em indicadores estratégicos, permitindo análises mais rápidas e uma visão clara do desempenho do negócio.",
+      embedUrl:
+        "https://app.powerbi.com/view?r=eyJrIjoiMDg1NjE5NjMtYjBlYy00NTg0LWI2MDMtMmNiNDU5OTJlNDU4IiwidCI6IjcwNmUwZTIyLTUwZjktNDI2Ni1iOGMxLWViNDIyNmNkZDllYSJ9",
+      icon: BarChart3,
+    },
+  ],
 };
 
 export const finalCta = {

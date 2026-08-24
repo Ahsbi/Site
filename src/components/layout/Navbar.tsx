@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -12,22 +14,26 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-ink-100 bg-white/80 backdrop-blur-md">
       <Container className="flex items-center justify-between py-4">
-        <a href="#top" className="flex items-center gap-2 font-display text-lg font-bold text-ink-950">
-          <span className="flex size-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-600 to-brand-400 text-sm text-white">
-            BI
-          </span>
+        <Link href="/" className="flex items-center gap-2.5 font-display text-lg font-bold text-ink-950">
+          <Image
+            src="/logo.jpg"
+            alt={siteConfig.name}
+            width={36}
+            height={36}
+            className="size-9 rounded-lg object-cover"
+          />
           {siteConfig.name}
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
           {nav.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               className="text-sm font-medium text-ink-600 transition-colors hover:text-brand-700"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -52,14 +58,14 @@ export function Navbar() {
         <div className="border-t border-ink-100 bg-white lg:hidden">
           <Container className="flex flex-col gap-1 py-4">
             {nav.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className="rounded-lg px-3 py-3 text-sm font-medium text-ink-700 hover:bg-ink-50"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
             <Button href="#contato" variant="primary" className="mt-2 justify-center py-3 text-sm">
               Agendar diagnóstico

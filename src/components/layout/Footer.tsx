@@ -1,3 +1,5 @@
+import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { nav, siteConfig } from "@/data/content";
@@ -9,12 +11,12 @@ export function Footer() {
     <footer className="border-t border-white/10 bg-ink-950 text-ink-200">
       <Container className="grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col gap-4 sm:col-span-2 lg:col-span-2">
-          <span className="flex items-center gap-2 font-display text-lg font-bold text-white">
-            <span className="flex size-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-600 to-brand-400 text-sm text-white">
-              BI
+          <Link href="/" className="flex items-center gap-2.5 font-display text-lg font-bold text-white">
+            <span className="flex size-9 items-center justify-center rounded-lg bg-white p-1">
+              <Image src="/logo.jpg" alt={siteConfig.name} width={28} height={28} className="rounded-md object-cover" />
             </span>
             {siteConfig.name}
-          </span>
+          </Link>
           <p className="max-w-sm text-sm leading-relaxed text-ink-300">
             {siteConfig.tagline}. Ajudamos escritórios contábeis a substituir planilhas e retrabalho por dados
             centralizados, dashboards e automações.
@@ -26,9 +28,9 @@ export function Footer() {
           <ul className="flex flex-col gap-3">
             {nav.map((item) => (
               <li key={item.href}>
-                <a href={item.href} className="text-sm text-ink-300 transition-colors hover:text-brand-300">
+                <Link href={item.href} className="text-sm text-ink-300 transition-colors hover:text-brand-300">
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -45,7 +47,7 @@ export function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <Phone className="size-4 text-brand-400" aria-hidden="true" />
-              <a href={`tel:${siteConfig.phone}`} className="hover:text-brand-300">
+              <a href={`tel:${siteConfig.phoneHref}`} className="hover:text-brand-300">
                 {siteConfig.phone}
               </a>
             </li>
