@@ -26,7 +26,9 @@ export const siteConfig = {
   email: "ahsconsultoriabi@gmail.com",
   phone: "(85) 99792-9650",
   phoneHref: "+5585997929650",
-  whatsapp: "https://wa.me/5585997929650",
+  whatsapp: `https://wa.me/5585997929650?text=${encodeURIComponent(
+    "Olá! Vim pelo site e gostaria de agendar um diagnóstico para o meu escritório contábil.",
+  )}`,
 };
 
 export const nav: { label: string; href: string }[] = [
