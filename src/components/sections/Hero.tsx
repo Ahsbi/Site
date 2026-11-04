@@ -1,4 +1,4 @@
-import { BarChart3, TrendingUp, Users } from "lucide-react";
+import { BarChart3, CheckCircle2, TrendingUp, Users } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -14,18 +14,16 @@ function DashboardMockup() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 text-sm font-semibold text-white">
             <BarChart3 className="size-4 text-brand-300" aria-hidden="true" />
-            Dashboard Executivo
+            Painel do Escritório
           </div>
-          <span className="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-300">
-            Ao vivo
-          </span>
+          <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-ink-200">Exemplo</span>
         </div>
 
         <div className="mt-6 grid grid-cols-3 gap-3">
           {[
-            { label: "Faturamento", value: "+18%", icon: TrendingUp },
-            { label: "Margem", value: "32%", icon: BarChart3 },
-            { label: "Clientes ativos", value: "1.240", icon: Users },
+            { label: "Honorários", value: "+6%", icon: TrendingUp },
+            { label: "No prazo", value: "96%", icon: CheckCircle2 },
+            { label: "Clientes ativos", value: "184", icon: Users },
           ].map((kpi) => (
             <div key={kpi.label} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
               <kpi.icon className="size-4 text-brand-300" aria-hidden="true" />
@@ -44,6 +42,7 @@ function DashboardMockup() {
             />
           ))}
         </div>
+        <p className="mt-4 text-center text-[11px] text-ink-400">{hero.mockupNote}</p>
       </div>
     </div>
   );
@@ -71,7 +70,7 @@ export function Hero() {
             <Button href={siteConfig.whatsapp} external variant="primary">
               {hero.primaryCta}
             </Button>
-            <Button href="#dashboards" variant="ghost">
+            <Button href="#exemplo" variant="ghost">
               {hero.secondaryCta}
             </Button>
           </div>

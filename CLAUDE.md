@@ -19,7 +19,7 @@ There is no test suite yet.
 
 ## Architecture
 
-- `src/app/page.tsx` composes the whole one-page site from section components, in the order defined by the PRD (Hero → Challenges → Benefits → Dashboards → HowItWorks → BeforeAfter → Integrations → WhyBI → Testimonials → FinalCta).
+- `src/app/page.tsx` composes the whole one-page site from section components, in the order defined by the PRD (Hero → Challenges → Offers → OfficeDemo → Benefits → Dashboards → ProjectsShowcase → Consultant → HowItWorks → BeforeAfter → Integrations → WhyBI → FounderProgram → Faq → FinalCta). `/apresentacao` is the professional presentation / partnership page and `/privacidade` the LGPD privacy policy. `src/app/opengraph-image.tsx` generates the social share image; Vercel Web Analytics is mounted in `layout.tsx`.
 - `src/components/sections/*` — one component per landing-page section. Each imports its own copy from `src/data/content.ts` rather than hardcoding strings.
 - `src/components/ui/*` — the shared design-system primitives (`Container`, `Badge`, `Button`, `Card`, `SectionHeading`) that every section is built from. Prefer reusing/extending these over adding new one-off styled elements.
 - `src/components/layout/*` — `Navbar` (client component, holds the mobile-menu state) and `Footer`.

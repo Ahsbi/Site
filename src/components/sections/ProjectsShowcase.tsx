@@ -93,6 +93,7 @@ export function ProjectsShowcase() {
               src={activeProject.embedUrl}
               className="absolute inset-0 h-full w-full"
               frameBorder={0}
+              loading="lazy"
               allowFullScreen
               onLoad={() => setLoaded(true)}
             />

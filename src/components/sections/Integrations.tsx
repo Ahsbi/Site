@@ -22,6 +22,7 @@ export function Integrations() {
               </div>
             ))}
           </div>
+          <p className="mt-8 text-center text-xs leading-relaxed text-ink-500">{integrations.note}</p>
         </div>
       </Container>
     </section>

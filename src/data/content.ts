@@ -1,7 +1,9 @@
 import type { LucideIcon } from "lucide-react";
 import {
   BarChart3,
+  Briefcase,
   Building2,
+  Calculator,
   Clock4,
   Database,
   FileSpreadsheet,
@@ -11,6 +13,7 @@ import {
   LayoutDashboard,
   LineChart,
   Plug,
+  Receipt,
   Search,
   Settings2,
   Sparkles,
@@ -23,20 +26,40 @@ import {
 export const siteConfig = {
   name: "BI Contábil",
   tagline: "Consultoria em Business Intelligence para Escritórios Contábeis",
+  url: "https://site-ztij.vercel.app",
   email: "ahsconsultoriabi@gmail.com",
   phone: "(85) 99792-9650",
   phoneHref: "+5585997929650",
   whatsapp: `https://wa.me/5585997929650?text=${encodeURIComponent(
     "Olá! Vim pelo site e gostaria de agendar um diagnóstico para o meu escritório contábil.",
   )}`,
+  /** Optional social profiles — leave empty to hide the link. */
+  linkedin: "",
+  instagram: "",
+};
+
+export const consultant = {
+  eyebrow: "Quem conduz o projeto",
+  name: "Anderson Silva",
+  role: "Contador de formação · Especialista em Business Intelligence",
+  credential: "Microsoft Certified: Power BI Data Analyst Associate",
+  text: "Antes de trabalhar com dados, me formei em Contabilidade. Entendo balancete, DRE, regimes tributários e a correria do fechamento, então você não precisa traduzir a rotina do escritório para um técnico de TI. Eu mesmo conduzo cada projeto, do diagnóstico ao treinamento da equipe.",
+  highlights: [
+    "Formação em Ciências Contábeis",
+    "Certificação Microsoft em Power BI",
+    "Atendimento direto, sem intermediários",
+    "Atuação em Fortaleza e on-line",
+  ],
+  cta: "Conhecer minha trajetória",
 };
 
 export const nav: { label: string; href: string }[] = [
   { label: "Desafios", href: "/#desafios" },
-  { label: "Benefícios", href: "/#beneficios" },
-  { label: "Dashboards", href: "/#dashboards" },
+  { label: "Soluções", href: "/#solucoes" },
+  { label: "Exemplo", href: "/#exemplo" },
   { label: "Como funciona", href: "/#como-funciona" },
-  { label: "Apresentação", href: "/apresentacao" },
+  { label: "Parceria", href: "/apresentacao" },
+  { label: "Dúvidas", href: "/#duvidas" },
   { label: "Contato", href: "/#contato" },
 ];
 
@@ -44,14 +67,15 @@ export const hero = {
   eyebrow: "Consultoria em BI para escritórios contábeis",
   headline: "Transforme processos manuais do seu escritório contábil em decisões estratégicas com dados.",
   subheadline:
-    "Automatizamos a coleta, organização e análise das informações do seu escritório para que você tenha dashboards, indicadores e insights atualizados sem depender de planilhas e relatórios manuais.",
+    "Automatizamos a coleta, organização e análise das informações do seu escritório para que você tenha dashboards e indicadores atualizados, com muito menos planilhas e retrabalho no fechamento.",
   primaryCta: "Agendar um diagnóstico",
-  secondaryCta: "Conhecer a solução",
+  secondaryCta: "Ver exemplo de painel",
   stats: [
-    { value: "100%", label: "dos dados do escritório em um só lugar" },
-    { value: "0", label: "planilhas manuais para consolidar relatórios" },
-    { value: "24/7", label: "indicadores atualizados em tempo real" },
+    { value: "Contador", label: "de formação, especialista em BI" },
+    { value: "Microsoft", label: "Certified: Power BI Data Analyst" },
+    { value: "30 min", label: "de diagnóstico gratuito, sem compromisso" },
   ],
+  mockupNote: "Exemplo ilustrativo com dados fictícios",
 };
 
 export const challenges = {
@@ -90,8 +114,8 @@ export const benefits: { eyebrow: string; title: string; items: Benefit[] } = {
       icon: Database,
     },
     {
-      title: "Indicadores em tempo real",
-      description: "Acompanhe os principais números do escritório sempre atualizados.",
+      title: "Indicadores sempre atualizados",
+      description: "Acompanhe os principais números do escritório a cada atualização, sem montar relatório.",
       icon: Gauge,
     },
     {
@@ -132,7 +156,14 @@ export const dashboards: { eyebrow: string; title: string; subtitle: string; gro
     {
       title: "Dashboard Financeiro",
       icon: Wallet,
-      items: ["Receita", "Despesas", "Fluxo de caixa", "Inadimplência", "Lucratividade", "Projeções financeiras"],
+      items: [
+        "Receita de honorários",
+        "Despesas",
+        "Fluxo de caixa",
+        "Inadimplência de honorários",
+        "Lucratividade",
+        "Projeções financeiras",
+      ],
     },
     {
       title: "Dashboard Comercial",
@@ -144,17 +175,23 @@ export const dashboards: { eyebrow: string; title: string; subtitle: string; gro
       icon: Settings2,
       items: [
         "Produtividade por departamento",
-        "Volume de clientes",
-        "Entregas realizadas",
-        "Pendências",
-        "SLA",
+        "Obrigações entregues no prazo",
+        "Entregas por fiscal, DP e contábil",
+        "Pendências de documentos",
+        "Horas por cliente",
         "Gargalos operacionais",
       ],
     },
     {
       title: "Dashboard de Clientes",
       icon: UserCircle2,
-      items: ["Carteira de clientes", "Rentabilidade", "Churn", "Potencial de crescimento", "Segmentação de clientes"],
+      items: [
+        "Rentabilidade por cliente (honorário × horas)",
+        "Carteira por regime tributário",
+        "Churn",
+        "Potencial de crescimento",
+        "Segmentação de clientes",
+      ],
     },
   ],
 };
@@ -229,19 +266,32 @@ export interface IntegrationItem {
   icon: LucideIcon;
 }
 
-export const integrations: { eyebrow: string; title: string; subtitle: string; items: IntegrationItem[] } = {
+export const integrations: {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  note: string;
+  items: IntegrationItem[];
+} = {
   eyebrow: "Ecossistema de dados",
   title: "Integrações",
   subtitle:
-    "Conectamos as ferramentas que o seu escritório já utiliza em um único ambiente central de Business Intelligence.",
+    "Trabalhamos a partir dos relatórios e exportações dos sistemas que o seu escritório já usa. Você não precisa trocar de sistema.",
   items: [
-    { label: "Sistemas Contábeis", icon: Building2 },
-    { label: "ERPs", icon: Settings2 },
+    { label: "Domínio", icon: Building2 },
+    { label: "Fortes", icon: Building2 },
+    { label: "Questor", icon: Building2 },
+    { label: "Alterdata", icon: Building2 },
+    { label: "Conta Azul", icon: Settings2 },
+    { label: "Omie", icon: Settings2 },
+    { label: "Nibo", icon: Settings2 },
     { label: "Excel", icon: FileSpreadsheet },
-    { label: "Bancos de Dados", icon: Database },
+    { label: "Bancos de dados", icon: Database },
     { label: "APIs", icon: Plug },
+    { label: "Extratos bancários", icon: Receipt },
     { label: "Power BI", icon: BarChart3 },
   ],
+  note: "Os nomes citados são marcas de seus respectivos fabricantes. A conexão é feita a partir das exportações ou integrações disponíveis em cada sistema, avaliadas no diagnóstico.",
 };
 
 export const whyBI = {
@@ -260,11 +310,126 @@ export const whyBI = {
   ],
 };
 
-export const testimonials = {
-  eyebrow: "Cases",
-  title: "Depoimentos e cases",
-  message:
-    "Estamos construindo os primeiros cases de sucesso da consultoria. Em breve, esta área vai reunir depoimentos, resultados e comparativos de antes e depois de escritórios contábeis reais que transformaram sua gestão com dados.",
+export const founderProgram = {
+  eyebrow: "Programa Escritório Parceiro Fundador",
+  title: "3 vagas para escritórios que querem sair na frente",
+  text: "Estou selecionando três escritórios contábeis de Fortaleza para desenvolver os primeiros projetos em condições especiais. Em troca, peço sua opinião sincera e, se o resultado for bom, autorização para contar essa história como case.",
+  items: [
+    {
+      title: "Piloto com um cliente real",
+      description:
+        "Um painel gerencial completo para um cliente do escritório, com dados anonimizados, para vocês verem o valor antes de qualquer compromisso.",
+    },
+    {
+      title: "Condição de fundador",
+      description: "Investimento reduzido no primeiro projeto e prioridade na agenda durante a implantação.",
+    },
+    {
+      title: "Construção conjunta",
+      description:
+        "Vocês ajudam a definir os indicadores e o formato do serviço que o escritório vai oferecer aos clientes.",
+    },
+  ],
+  cta: "Quero conhecer o programa",
+  whatsappText: "Olá! Vim pelo site e quero saber mais sobre o Programa Escritório Parceiro Fundador.",
+};
+
+export interface Offer {
+  eyebrow: string;
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  items: string[];
+}
+
+export const offers: { eyebrow: string; title: string; subtitle: string; items: Offer[] } = {
+  eyebrow: "Duas frentes",
+  title: "BI para o seu escritório e para os clientes dele",
+  subtitle:
+    "Os dados que o escritório já produz podem melhorar a gestão interna e também virar um novo serviço recorrente para a carteira.",
+  items: [
+    {
+      eyebrow: "Para a gestão do escritório",
+      title: "Mais controle, menos retrabalho",
+      description: "Painéis internos para o sócio enxergar rentabilidade, prazos e produtividade sem montar planilhas.",
+      icon: Calculator,
+      items: [
+        "Rentabilidade por cliente: honorário × horas da equipe",
+        "Obrigações e prazos por departamento",
+        "Inadimplência de honorários e base para reajustes",
+        "Produtividade e gargalos da equipe",
+      ],
+    },
+    {
+      eyebrow: "Para os clientes do escritório",
+      title: "Uma nova fonte de receita",
+      description: "Painéis gerenciais entregues com a marca do escritório, como serviço adicional de BPO ou consultoria.",
+      icon: Briefcase,
+      items: [
+        "DRE gerencial mensal, visual e comparativa",
+        "Faturamento, custos, despesas e margem",
+        "Fluxo de caixa e inadimplência",
+        "O cliente continua sendo do escritório; eu trabalho nos bastidores",
+      ],
+    },
+  ],
+};
+
+export const officeDemo = {
+  eyebrow: "Exemplo prático",
+  title: "Como seria o painel do seu escritório",
+  subtitle:
+    "Uma prévia com dados fictícios de um escritório com 184 clientes. No projeto real, os números vêm dos sistemas e planilhas que vocês já usam.",
+  note: "Dados fictícios, apenas para ilustração.",
+  kpis: [
+    { label: "Honorários no mês", value: "R$ 186 mil", trend: "+6% vs. mês anterior" },
+    { label: "Clientes ativos", value: "184", trend: "+4 no trimestre" },
+    { label: "Obrigações no prazo", value: "96%", trend: "meta: 98%" },
+    { label: "Inadimplência", value: "4,2%", trend: "-1,1 p.p. no trimestre" },
+  ],
+  matrixTitle: "Rentabilidade por cliente",
+  matrixSubtitle: "Cada ponto é um cliente: honorário mensal × horas consumidas pela equipe",
+  matrixLegend: { ok: "Honorário cobre as horas", bad: "Consome mais horas do que paga" },
+  regimeTitle: "Carteira por regime tributário",
+  regimes: [
+    { label: "Simples Nacional", value: 112 },
+    { label: "Lucro Presumido", value: 51 },
+    { label: "Lucro Real", value: 14 },
+    { label: "MEI e outros", value: 7 },
+  ],
+  insight: "12 clientes consomem mais horas do que o honorário cobre. É por eles que começa a conversa de reajuste.",
+  cta: "Quero um painel assim",
+};
+
+export const faq = {
+  eyebrow: "Dúvidas frequentes",
+  title: "Perguntas que os escritórios costumam fazer",
+  items: [
+    {
+      q: "Preciso trocar o sistema contábil que já uso?",
+      a: "Não. Os painéis são construídos a partir dos relatórios e exportações do seu sistema atual (Domínio, Fortes, Questor, Alterdata, Conta Azul, entre outros) e das planilhas que vocês já mantêm.",
+    },
+    {
+      q: "Como ficam a LGPD e o sigilo dos dados dos clientes?",
+      a: "Os dados ficam em um ambiente com acesso controlado, definido junto com o escritório, e o trabalho é coberto por acordo de confidencialidade. Na demonstração e no piloto, usamos dados fictícios ou anonimizados.",
+    },
+    {
+      q: "Quanto tempo leva para ter o primeiro painel?",
+      a: "Depende de como os dados estão organizados. Um piloto com um cliente costuma ficar pronto em poucos dias úteis depois que recebemos as exportações. O prazo de cada projeto é definido no diagnóstico.",
+    },
+    {
+      q: "Minha equipe precisa saber Power BI?",
+      a: "Não. A equipe só consulta os painéis. No final, faço um treinamento prático para que todos saibam interpretar os indicadores.",
+    },
+    {
+      q: "Vocês vão atender os clientes do escritório diretamente?",
+      a: "Não. No modelo de parceria, o relacionamento é sempre do escritório, que apresenta o serviço com a própria marca. Isso fica previsto em contrato.",
+    },
+    {
+      q: "Como é cobrado?",
+      a: "Em geral, há um valor de implantação e uma mensalidade de manutenção, que variam conforme o número de fontes de dados e de painéis. O diagnóstico inicial de 30 minutos é gratuito.",
+    },
+  ],
 };
 
 export interface ProjectItem {

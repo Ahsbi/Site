@@ -9,7 +9,11 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { BeforeAfter } from "@/components/sections/BeforeAfter";
 import { Integrations } from "@/components/sections/Integrations";
 import { WhyBI } from "@/components/sections/WhyBI";
-import { Testimonials } from "@/components/sections/Testimonials";
+import { Offers } from "@/components/sections/Offers";
+import { OfficeDemo } from "@/components/sections/OfficeDemo";
+import { Consultant } from "@/components/sections/Consultant";
+import { FounderProgram } from "@/components/sections/FounderProgram";
+import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
 
 export default function Home() {
@@ -19,14 +23,18 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Challenges />
+        <Offers />
+        <OfficeDemo />
         <Benefits />
         <Dashboards />
         <ProjectsShowcase />
+        <Consultant />
         <HowItWorks />
         <BeforeAfter />
         <Integrations />
         <WhyBI />
-        <Testimonials />
+        <FounderProgram />
+        <Faq />
         <FinalCta />
       </main>
       <Footer />

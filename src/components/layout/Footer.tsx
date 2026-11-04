@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone } from "lucide-react";
+import { Mail, MessageCircle, Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { nav, siteConfig } from "@/data/content";
 
@@ -51,6 +51,26 @@ export function Footer() {
                 {siteConfig.phone}
               </a>
             </li>
+            <li className="flex items-center gap-2">
+              <MessageCircle className="size-4 text-brand-400" aria-hidden="true" />
+              <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer" className="hover:text-brand-300">
+                WhatsApp
+              </a>
+            </li>
+            {siteConfig.linkedin && (
+              <li>
+                <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-brand-300">
+                  LinkedIn
+                </a>
+              </li>
+            )}
+            {siteConfig.instagram && (
+              <li>
+                <a href={siteConfig.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-brand-300">
+                  Instagram
+                </a>
+              </li>
+            )}
           </ul>
         </div>
       </Container>
@@ -60,7 +80,9 @@ export function Footer() {
           <p>
             © {year} {siteConfig.name}. Todos os direitos reservados.
           </p>
-          <p>Consultoria em Business Intelligence para escritórios contábeis.</p>
+          <Link href="/privacidade" className="hover:text-brand-300">
+            Política de privacidade
+          </Link>
         </Container>
       </div>
     </footer>
