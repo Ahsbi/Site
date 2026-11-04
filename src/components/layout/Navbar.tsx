@@ -38,7 +38,7 @@ export function Navbar() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button href="#contato" variant="primary" className="px-5 py-3 text-sm">
+          <Button href={siteConfig.whatsapp} external variant="primary" className="px-5 py-3 text-sm">
             Agendar diagnóstico
           </Button>
         </div>
@@ -67,7 +67,7 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <Button href="#contato" variant="primary" className="mt-2 justify-center py-3 text-sm">
+            <Button href={siteConfig.whatsapp} external variant="primary" className="mt-2 justify-center py-3 text-sm">
               Agendar diagnóstico
             </Button>
           </Container>

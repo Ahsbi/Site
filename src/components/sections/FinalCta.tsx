@@ -1,6 +1,6 @@
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { finalCta } from "@/data/content";
+import { finalCta, siteConfig } from "@/data/content";
 
 export function FinalCta() {
   return (
@@ -12,7 +12,7 @@ export function FinalCta() {
           {finalCta.headline}
         </h2>
         <p className="max-w-xl text-balance leading-relaxed text-ink-200">{finalCta.text}</p>
-        <Button href="#contato" variant="primary" className="mt-2 px-8 py-4 text-base">
+        <Button href={siteConfig.whatsapp} external variant="primary" className="mt-2 px-8 py-4 text-base">
           {finalCta.button}
         </Button>
       </Container>

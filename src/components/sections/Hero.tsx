@@ -2,7 +2,7 @@ import { BarChart3, TrendingUp, Users } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
-import { hero } from "@/data/content";
+import { hero, siteConfig } from "@/data/content";
 
 function DashboardMockup() {
   const bars = [42, 68, 54, 88, 62, 96, 74];
@@ -68,7 +68,7 @@ export function Hero() {
           </p>
 
           <div className="mt-2 flex flex-col gap-4 sm:flex-row">
-            <Button href="#contato" variant="primary">
+            <Button href={siteConfig.whatsapp} external variant="primary">
               {hero.primaryCta}
             </Button>
             <Button href="#dashboards" variant="ghost">
