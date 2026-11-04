@@ -13,7 +13,7 @@ import { Transformation } from "@/components/apresentacao/Transformation";
 import { PresentationCta } from "@/components/apresentacao/PresentationCta";
 
 export const metadata: Metadata = {
-  title: "Apresentação | BI Contábil — Especialista em Business Intelligence",
+  title: "Apresentação | AhsBi Consultoria — Especialista em Business Intelligence",
   description:
     "Conheça o posicionamento profissional, a metodologia e o modelo de parceria com escritórios contábeis do especialista em Business Intelligence e gestão orientada a dados.",
 };

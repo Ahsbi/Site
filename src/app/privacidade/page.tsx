@@ -5,8 +5,8 @@ import { Container } from "@/components/ui/Container";
 import { consultant, siteConfig } from "@/data/content";
 
 export const metadata: Metadata = {
-  title: "Política de Privacidade | BI Contábil",
-  description: "Como o site BI Contábil trata dados pessoais, em conformidade com a LGPD.",
+  title: "Política de Privacidade | AhsBi Consultoria",
+  description: "Como o site da AhsBi Consultoria trata dados pessoais, em conformidade com a LGPD.",
 };
 
 const sections = [

@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Mail, MessageCircle, Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { Logo } from "@/components/ui/Logo";
 import { nav, siteConfig } from "@/data/content";
 
 export function Footer() {
@@ -11,11 +11,8 @@ export function Footer() {
     <footer className="border-t border-white/10 bg-ink-950 text-ink-200">
       <Container className="grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col gap-4 sm:col-span-2 lg:col-span-2">
-          <Link href="/" className="flex items-center gap-2.5 font-display text-lg font-bold text-white">
-            <span className="flex size-9 items-center justify-center rounded-lg bg-white p-1">
-              <Image src="/logo.jpg" alt={siteConfig.name} width={28} height={28} className="rounded-md object-cover" />
-            </span>
-            {siteConfig.name}
+          <Link href="/" aria-label={`${siteConfig.name}, página inicial`} className="self-start">
+            <Logo tone="dark" showTagline />
           </Link>
           <p className="max-w-sm text-sm leading-relaxed text-ink-300">
             {siteConfig.tagline}. Ajudamos escritórios contábeis a substituir planilhas e retrabalho por dados

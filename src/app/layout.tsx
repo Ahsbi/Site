@@ -14,7 +14,7 @@ const manrope = Manrope({
   subsets: ["latin"],
 });
 
-const title = "BI Contábil | Consultoria em Business Intelligence para Escritórios Contábeis";
+const title = "AhsBi Consultoria | Business Intelligence para Escritórios Contábeis";
 const description =
   "Painéis gerenciais e automação de relatórios para escritórios contábeis, conduzidos por um contador especialista em Power BI. Para a gestão do escritório e como novo serviço para os clientes.";
 

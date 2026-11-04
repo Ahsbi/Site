@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
 import { nav, siteConfig } from "@/data/content";
 
@@ -14,15 +14,8 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-ink-100 bg-white/80 backdrop-blur-md">
       <Container className="flex items-center justify-between py-4">
-        <Link href="/" className="flex items-center gap-2.5 font-display text-lg font-bold text-ink-950">
-          <Image
-            src="/logo.jpg"
-            alt={siteConfig.name}
-            width={36}
-            height={36}
-            className="size-9 rounded-lg object-cover"
-          />
-          {siteConfig.name}
+        <Link href="/" aria-label={`${siteConfig.name}, página inicial`}>
+          <Logo showTagline taglineClassName="lg:hidden" />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">

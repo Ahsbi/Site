@@ -24,9 +24,9 @@ import {
 } from "lucide-react";
 
 export const siteConfig = {
-  name: "BI Contábil",
+  name: "AhsBi Consultoria",
   tagline: "Consultoria em Business Intelligence para Escritórios Contábeis",
-  url: "https://site-ztij.vercel.app",
+  url: "https://www.ahsbiconsultoria.com.br",
   email: "ahsconsultoriabi@gmail.com",
   phone: "(85) 99792-9650",
   phoneHref: "+5585997929650",

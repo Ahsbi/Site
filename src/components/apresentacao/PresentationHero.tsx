@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { LogoMark } from "@/components/ui/Logo";
 import { presentationHero } from "@/data/apresentacao";
 
 export function PresentationHero() {
@@ -14,9 +15,7 @@ export function PresentationHero() {
       <Container className="relative grid gap-16 py-24 sm:py-28 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-32">
         <Reveal className="flex flex-col items-start gap-6">
           <div className="flex items-center gap-3">
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-white p-1.5">
-              <Image src="/logo.jpg" alt="AhsBi Consultoria em Dados" width={28} height={28} className="rounded-full object-cover" />
-            </span>
+            <LogoMark className="size-10" />
             <Badge variant="dark">{presentationHero.eyebrow}</Badge>
           </div>
 
